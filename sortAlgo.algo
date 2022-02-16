@@ -1,0 +1,24 @@
+PROCEDURE swapProcess(VAR a,b :INTEGER)
+VAR
+    aux:INTEGER;
+BEGIN
+    aux=a;
+    a=b;
+    b=aux;
+END
+
+ALGORITHM sort_Algo
+VAR
+    tab : ARRAY_OF INTEGER;
+    i,j:INTEGER;
+    m:INTEGER;
+BEGIN
+    m:=tab.length-1;
+    FOR i FROM 0 TO m STEP 1  DO
+        j:=i;
+        WHILE (j>0 AND tab[j]<tab[j-1]) DO
+            swapProcess(tab[j-1], tab[j]);
+            j:=j-1;
+        END_WHILE
+    END_FOR
+END
